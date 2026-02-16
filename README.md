@@ -30,7 +30,6 @@ Designed with a **minimal core**, **premium structure**, and **futuristic develo
 
 ## 🛠 TECH MATRIX
 
-```diff
 + Runtime      → Node.js
 + Framework    → Express.js
 + Database     → MySQL
