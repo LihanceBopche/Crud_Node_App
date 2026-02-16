@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dashboard</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Segoe UI;
+      background: #f1f5f9
+    }
+
+    .topbar {
+      background: #0f172a;
+      color: #fff;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center
+    }
+
+    .logout {
+      width: 40px;
+      height: 40px;
+      background: crimson;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin-right: 15px
+    }
+
+    .container {
+      padding: 25px
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px
+    }
+
+    .add-btn {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer
+    }
+
+    table {
+      width: 100%;
+      background: #fff;
+      border-collapse: collapse;
+      border-radius: 10px;
+      overflow: hidden
+    }
+
+    th,
+    td {
+      padding: 12px;
+      text-align: center
+    }
+
+    th {
+      background: #e2e8f0
+    }
+
+    .action {
+      cursor: pointer;
+      font-size: 18px;
+      margin: 0 6px
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .6)
+    }
+
+    .popup-box {
+      background: #fff;
+      width: 380px;
+      margin: 100px auto;
+      padding: 22px;
+      border-radius: 10px
+    }
+
+    .popup-box input,
+    .popup-box select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px
+    }
+
+    .popup-actions {
+      display: flex;
+      justify-content: space-between
+    }
+
+    .popup-actions button {
+      width: 48%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      color: #fff
+    }
+
+    .save-btn {
+      background: #22c55e;
+      cursor: pointer;
+    }
+
+    .cancel-btn {
+      background: #ef4444
+    }
+
+    select[multiple] {
+      height: 120px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="logout" onclick="logout()">LO</div>
+    <div id="userEmail"></div>
+  </div>
+
+  <div class="container">
+    <div class="header">
+      <h2>Student List</h2>
+      <button class="add-btn" onclick="openPopup()">+ Add Student</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Roll No</th>
+          <th>Course</th>
+          <th>Fees</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="studentTable"></tbody>
+    </table>
+  </div>
+
+  <div class="popup" id="popup">
+    <div class="popup-box">
+      <h3>Add Student</h3>
+      <input id="name" placeholder="Student Name">
+      <input id="rollno" readonly>
+      <select id="courses" multiple></select>
+      <input id="fees" readonly placeholder="Total Fees">
+      <div class="popup-actions">
+        <button class="save-btn" onclick="saveStudent()">Save</button>
+        <button class="cancel-btn" onclick="closePopup()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script/print.js"></script>
+<script src="script/script.js"></script>
+
+</body>
+
+</html>

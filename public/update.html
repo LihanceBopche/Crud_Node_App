@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Student</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #1dd1a1, #54a0ff);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: #fff;
+      padding: 25px;
+      width: 350px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2e86de;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #2e86de;
+      color: #fff;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1b4f72;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Update Student</h2>
+
+    <form action="/api/update" method="POST">
+      <input type="number" name="rollno" placeholder="Roll No" required>
+      <input type="text" name="name" placeholder="New Name" required>
+      <input type="email" name="email" placeholder="New Email" required>
+      <input type="text" name="course" placeholder="New Course" required>
+
+      <button type="submit">Update</button>
+    </form>
+  </div>
+
+</body>
+</html>
